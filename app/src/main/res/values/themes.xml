@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Uber" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant" >@color/lightgrey</item>
+        <item name= "android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.Uber" parent="Base.Theme.Uber" />
+</resources>

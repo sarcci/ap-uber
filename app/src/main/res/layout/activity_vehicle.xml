@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VehicleActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        />
+
+
+    <TextView
+        android:id="@+id/tekst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        android:text = "Промена на возило"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        />
+
+    <EditText
+        android:id="@+id/model"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:hint="модел"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tekst"
+        android:layout_marginTop="100dp" />
+    <EditText
+        android:id="@+id/reg"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:hint="регистрациска табличка"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/model" />
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Зачувај"
+        app:layout_constraintTop_toBottomOf="@+id/reg"
+        app:layout_constraintStart_toStartOf="@+id/reg"
+        app:layout_constraintEnd_toEndOf="@+id/reg"
+        android:layout_marginTop="10dp"
+        android:onClick="changeVehicle"
+        />
+    <TextView
+        android:id="@+id/zacuvano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="."
+        app:layout_constraintStart_toStartOf="@+id/save"
+        app:layout_constraintEnd_toEndOf="@+id/save"
+        app:layout_constraintTop_toBottomOf="@+id/save"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

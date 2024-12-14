@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Carpool</string>
+    <string name="more"><u>Повеќе детали</u></string>
+    <string name="str1"><u>Промени возило.</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="slogan">Wherever you go.</string>
+    <string name="txt"><u>Регистрирај се.</u></string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps2">Maps2Activity</string>
+</resources>

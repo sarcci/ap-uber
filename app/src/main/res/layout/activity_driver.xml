@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DriverActivity"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        />
+
+    <Button
+        android:id="@+id/kopce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мои возења"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="27dp"
+        />
+
+    <TextView
+        android:id="@+id/profil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/person"
+        android:text="Мој профил"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="15dp"
+        />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/star"
+        android:layout_marginStart="10dp"
+        android:text="4.3"
+        android:textColor="#9E9E9E"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/profil"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"/>
+
+
+    <TextView
+        android:id="@+id/tekst3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вашето возило е:"
+        android:layout_marginStart="18dp"
+        android:textColor="#9E9E9E"
+        app:layout_constraintBottom_toTopOf="@+id/tekst"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profil"
+        />
+
+    <TextView
+        android:id="@+id/vozilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Немате внесено возило."
+        app:layout_constraintStart_toEndOf="@+id/tekst3"
+        app:layout_constraintBottom_toTopOf="@+id/tekst"
+        app:layout_constraintTop_toBottomOf="@+id/profil"
+        android:layout_marginStart="5dp"
+        />
+
+    <TextView
+        android:id="@+id/promeni"
+        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:text="@string/str1"
+        app:layout_constraintTop_toBottomOf="@+id/vozilo"
+        android:textAllCaps="false"
+        android:textColor="#57a0d4"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:onClick="changeVehicle"/>
+
+    <TextView
+        android:id="@+id/tekst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Внесете временски интервал на опслужување:"
+        android:textSize="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/promeni" />
+
+    <EditText
+        android:id="@+id/interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="min"
+        android:gravity="center_horizontal"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tekst" />
+
+    <TextView
+        android:id="@+id/tekst2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="минути"
+        android:textSize="16dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/interval"
+        app:layout_constraintTop_toBottomOf="@+id/tekst"
+        app:layout_constraintBottom_toBottomOf="@+id/interval"/>
+
+    <TextView
+        android:id="@+id/tekst4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Внесете почетна цена:"
+        android:textSize="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tekst2"/>
+
+    <EditText
+        android:id="@+id/pricestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="mkd"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/tekst4"
+        app:layout_constraintStart_toStartOf="@+id/tekst4"
+        app:layout_constraintEnd_toEndOf="@+id/tekst4"
+        />
+
+    <TextView
+        android:id="@+id/tekst5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Внесете цена за km:"
+        android:textSize="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tekst2"/>
+
+    <EditText
+        android:id="@+id/pricekm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="mkd"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/tekst5"
+        app:layout_constraintStart_toStartOf="@+id/tekst5"
+        app:layout_constraintEnd_toEndOf="@+id/tekst5"
+        />
+
+    <Button
+        android:id="@+id/pocni"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Почни"
+        app:layout_constraintTop_toBottomOf="@+id/pricekm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:onClick="offerStart"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
