@@ -5,7 +5,7 @@
 - API 24
 - Уред: Nexus 4
 - База: SQLite
-- ***Во local.properties да се смени вредноста на MAPS_API_KEY, за пристап до Google Maps***
+- ***Во local.properties да се смени вредноста на MAPS_API_KEY, за пристап до Google Maps.***
 
 ### Функционалности ###
 
