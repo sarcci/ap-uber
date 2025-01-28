@@ -1,37 +1,27 @@
-## Апликација за споделување на превоз помеѓу патник и возач ##
+## Android applicaton for sharing rides between drivers and passengers ##
 
-### Детали ###
-- Верзија: Android Studio Ladybug 2024.2.1
+### Details ###
+- Version: Android Studio Ladybug 2024.2.1
 - API 24
-- Уред: Nexus 4
-- База: SQLite
-- ***Во local.properties да се смени вредноста на MAPS_API_KEY, за пристап до Google Maps.***
+- Device: Nexus 4
+- Database: SQLite
+- ***Change the value of MAPS_API_KEY in the file local.properties to access Google Maps.***
 
-### Функционалности ###
+### Functionalities ###
 
-Корисникот се регистрира во системот со име, корисничко име и лозинка. При најавувањето, одбира дали во 
-тековната сесија ќе нуди или бара превоз. Отворена е можноста истиот корисник во една сесија да биде патник, 
-а во друга возач. Прикажано е името на патникот и неговиот рејтинг. Доколку е патник, насочен е кон мапа и се зема
-неговата моментална локација. На мапата, патникот ја избира неговата крајна дестинација. Доколку е возач, внесува 
-временски интервал во којшто е слободен (пр. 50 минути, почнувајќи од тој момент), почетна цена на возењето и цена за
-километар. Возачот има слобода да ја менува цената во различни понуди во зависност од побарувачката. Во еден момент 
-возачот може да има само една активна понуда. Со притискање на копчето „Почни“, ја започнува понудата и таа се смета за
-активна во посочениот временски интервал. Претходно возачот треба да има внесено модел на автомобилот којшто го користи
-и регистарски таблички. Возачот може да го промени возилото. Кај патникот во RecyclerView се појавуваат возачите кои се
-активни, подредени по рејтингот на возачот. Како информации во секој ред се дадени: името на возачот, неговиот модел на
-автомобил, пресметаната цена врз база на дестинацијата, и рејтингот на возачот. Екранот со приказ на понудите кај патникот
-е прилагоден и за Landscape режим. Патникот ја прифаќа понудата на возачот со кликање на копчето „Прифати“. Откако е притиснато
-копчето, рутата се смета за активна (односно возачот не може да вози друга рута). Кај патникот, после прифаќање на понуда, се
-појавува View којшто му навестува на моделот на возило и регистарските таблички на возилото кое го очекува. Со кликање на 
-„Крај на возењето“ патникот треба да го оцени возачот. При најавување на возачот, доколку патникот го има прифатено возачот, 
-кај возачот се појавува мапа, како и рутата којашто треба да ја вози.  Доколку завршило патувањето, при најавување на возачот, 
-истиот треба да го оцени и патникот. Со тоа завршува рутата. Рејтингот на секој корисник е пресметан од оцените кои ги добива и 
-како возач и како патник. Корисниците можат да ја видат историјата на своите патувања. Во RecyclerView се дадени, во секој ред, 
-датумот на патувањето и линк кон повеќе детали за истото. Деталите за секое патување вклучуваат: возач, патник, оцена од возач за
-патникот, оцена од патникот, возило, регистрациски таблички, цената и времетраењето на патувањето, како и рутата на истото. 
-Дополнителни подобрувања кои може да се додадат на апликацијата се: 
-- повеќе патници да можат да се возат на истата рута,
-- нотификација кај патникот кога возачот е на дестинацијата.
+- Users register with username and password. When logining, the user chooses whether they will be a driver or a passenger. Same user can have different roled in different login sessions.
+- The user's name and rating is displayed. 
+- If they are a passenger, the user is redirected to a map and their current location is taken. On the map, the user chooses their destination.
+- If they are a driver, they enter an time interval of service (e.g. 50 minutes, starting in that moment), base price, price per km and vehicle. With clicking "Start", the driver starts an offer and it is active in the given time interval. The driver must have entered a vehicle and a number plate. They can also change it.
+- In the passenger's view, the active offers are displayed in a recycler view ordered by their rating. In each row the passenger can see: the driver's name, their vehicle and number plate, the price for the ride and the driver's rating. This view is adapted to Landscape mode, too.
+- Calculation of price: the distance between the user's current location and the user's destination is multiplied by the price per km that the driver has defined, and it is added to the base price.
+- The passenger accepts the offer by clicking on "Accept". They are then redirected to a page showing the number plate they should look for.
+- The route is considered active now.
+- At the driver's side, they are shown the route they should drive as well as the passenger's name.
+- The user ends the ride by clicking "End of ride". Then they rate the driver with 0-5 stars with a 0.5 step. The driver also rates the passenger. The route ends here.
+- The rating of each user is calculated as the ratings they get as a driver and as an user.
+- In "Your rides", in every row of the recycler vies, users can see their history of rides.
+- By clicking "Details" they are shown a more detailed information about the chosen ride: name of driver, name of passenger, their ratings to each other, price, vehicle, number plate.
   
 ![pic1](https://github.com/user-attachments/assets/82e63266-c645-4769-a4a0-c0a8bd321686)
 ![pic2](https://github.com/user-attachments/assets/23b25ae2-2c5a-4670-8d08-403df6b5b15e)
